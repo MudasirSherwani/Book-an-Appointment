@@ -38,7 +38,7 @@ gem 'devise', '4.9.0'
 gem 'devise-jwt'
 gem 'jsonapi-serializer'
 gem 'rack-cors'
-gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'sprockets-rails', require: 'sprockets/railtie'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
