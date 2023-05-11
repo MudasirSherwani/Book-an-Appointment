@@ -11,11 +11,11 @@ class DoctorsController < ApplicationController
   end
 
   def create
-    @doctor = Doctor.new(params[:doctor_params])
+    @doctor = Doctor.new(doctor_params)
     if @doctor.save
-      render json: @doctor
+      render json: @doctor, status: :created
     else
-      render :new
+      render json: @doctor.errors, status: :unprocessable_entity
     end
   end
 
@@ -31,6 +31,6 @@ class DoctorsController < ApplicationController
   private
 
   def doctor_params
-    params.require(:doctor).permit(:name, :specialty, :description, :city, :image)
+    params.require(:doctor).permit(:name, :speciality, :description, :city, :image)
   end
 end

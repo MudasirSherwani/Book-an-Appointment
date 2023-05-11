@@ -10,9 +10,9 @@ class AppointmentsController < ApplicationController
     @user = User.find_by_id(params[:user_id])
     @appointment = @user.appointments.new(appointment_params)
     if @appointment.save
-      render json: @appointment
+      render json: @appointment, status: :created
     else
-      render :new
+      render json: @appointment.errors, status: :unprocessable_entity
     end
   end
 
@@ -29,6 +29,6 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:disease, :city, :appointment_date, :appointment_time, :user_id, :doctor_id)
+    params.require(:appointment).permit(:disease, :city, :appointment_date, :appointment_time, :doctor_id)
   end
 end
