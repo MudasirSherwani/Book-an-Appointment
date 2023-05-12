@@ -1,5 +1,5 @@
 class DoctorsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_request
   def index
     @doctors = Doctor.all
     render json: @doctors
