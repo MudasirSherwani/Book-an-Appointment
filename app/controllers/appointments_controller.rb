@@ -6,6 +6,12 @@ class AppointmentsController < ApplicationController
     render json: @appointments
   end
 
+  def show
+    @user = User.find_by_id(params[:user_id])
+    @appointment = @user.appointments.find(params[:id])
+    render json: @appointment
+  end
+
   def create
     @user = User.find_by_id(params[:user_id])
     @appointment = @user.appointments.new(appointment_params)
@@ -14,10 +20,6 @@ class AppointmentsController < ApplicationController
     else
       render json: @appointment.errors, status: :unprocessable_entity
     end
-  end
-
-  def new
-    @appointment = Appointment.new
   end
 
   def destroy
