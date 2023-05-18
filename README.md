@@ -42,7 +42,7 @@
 
 This is a full-stack project. In which you can register yourself create a doctor, book an appointment
 with the docotor, see all appiontmnets, delete a doctor(s).
-#### [World Vision Clinic Front-End](https://github.com/MudasirSherwani/Book-Appointment-Front-End)
+#### [World Vision Clinic Front-End](https://github.com/MudasirSherwani/Book-Appointment-Front-End/tree/main)
 
 ## 📖 Kanban Board <a name="kanban"></a>
 
